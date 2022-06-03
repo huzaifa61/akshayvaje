@@ -1,0 +1,38 @@
+<% include ../layouts/header %>
+
+<div class="container">
+
+    <div class="text-center">
+        <% include ../layouts/messages %>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-lg-3">
+            <div class="card">
+                <!-- <img class="card-img-top" src='/get_image/<%= student._id %>'> -->
+                <div class="card-body">
+                    <p class="card-text"><%= student.name %></p>
+                    <% if (user && student && user._id.equals(student._id)) { %>
+                    <a href="/edit" class="btn btn-outline-dark">Edit Profile</a>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-9">
+            <div class="heading-2 mt-5 mt-lg-0"><%= student.name %></div>
+
+            <div class="heading-3">Email</div>
+            <div class="para-2 mb-4"><%= student.email %></div>
+
+            <div class="heading-3">Contact Number</div>
+            <div class="para-2 mb-4"><%= student.contactNum %></div>
+
+            <div class="heading-3">Date of Birth</div>
+            <div class="para-3 mb-4"><%= new Date(student.dob).toDateString() %></div>
+        </div>
+        <% if (user && student && user._id.equals(student._id)) { %>
+        <div>HIDDEN STUFF, VISIBLE ONLY TO THE STUDENT</div>
+        <% } %>
+    </div>
+</div>
+
+<% include ../layouts/footer %>

@@ -1,0 +1,38 @@
+<% include ../../layouts/header %>
+
+<div class="container">
+  <div class="heading-1 text-center mt-3">Admin</div>
+  <% include ../../layouts/messages %>
+  <ul class="nav nav-tabs nav-justified">
+    <li class="nav-item">
+      <a class="nav-link heading-4" href="/admin/home/#1">Dummy Link 1</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link heading-4" href="/admin/home/#2">Dummy Link 2</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div class="text-center container">
+      <div class="row">
+        <% if (students.length != 0) { %>
+        <% students.forEach(student => { %>
+        <div class="col-12 col-md-6 col-xl-3 mt-4">
+          <div class="card">
+            <!-- <img class="card-img-top" src='/get_image/<%= student._id %>'> -->
+            <div class="card-body">
+              <p class="card-text"><%= student.name %></p>
+              <p class="card-text">
+                <a href="/profile/<%= student.id %>" class="btn btn-outline-dark">View Details</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <% }); %>
+        <% } %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<% include ../../layouts/footer %>

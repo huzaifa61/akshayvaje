@@ -1,0 +1,9 @@
+{
+    "env": {
+        "MONGO_CONNECTION_STRING": "mongodb+srv://admin_user:oC4LW5scDhm73DrF@main-mumbai.0omu0.mongodb.net/pr_db?retryWrites=true&w=majority",
+        "SECRET": "FAWpTqAzfS8sG23ix",
+        "SECRET_NUMBER": 54,
+        "PORT": 3000,
+        "COOKIES_SECRET": "8kxTBh4bqpJS8Kn5B"
+    }
+}
